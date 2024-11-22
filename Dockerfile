@@ -5,6 +5,8 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 COPY . /app
 WORKDIR /app
 
+COPY NuGet.Config /tmp/.dotnet/.nuget/NuGet.Config
+
 # Устанавливаем переменные окружения для .NET и NuGet
 ENV DOTNET_CLI_HOME=/tmp/.dotnet
 ENV NUGET_PACKAGES=/app/.nuget
