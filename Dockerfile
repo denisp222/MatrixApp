@@ -7,6 +7,9 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 COPY . /app
 WORKDIR /app
 
+# Изменяем права доступа
+RUN chmod -R 777 /app
+
 # Сначала копируем и компилируем серверную часть
 RUN dotnet restore /app/Server/Server.csproj
 RUN dotnet build /app/Server/Server.csproj
@@ -15,6 +18,8 @@ RUN dotnet build /app/Server/Server.csproj
 RUN dotnet restore /app/Client/Client.csproj
 RUN dotnet build /app/Client/Client.csproj
 
+# Устанавливаем переменную окружения для dotnet
+ENV DOTNET_CLI_HOME=/app/.dotnet
 
 # Копируем скрипт для запуска обоих процессов
 COPY start.sh /app/start.sh
