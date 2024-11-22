@@ -1,6 +1,3 @@
-# Используем официальный образ Rocky Linux
-FROM rockylinux:8
-
 # Используем официальный образ .NET SDK
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
@@ -8,25 +5,29 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 COPY . /app
 WORKDIR /app
 
-USER root
-
 # Устанавливаем переменные окружения для .NET и NuGet
-ENV DOTNET_CLI_HOME=/app/.dotnet
+ENV DOTNET_CLI_HOME=/tmp/.dotnet
 ENV NUGET_PACKAGES=/app/.nuget
 
 # Изменяем права доступа
-RUN chmod -R 755 /app
-RUN chmod -R 755 /tmp/.dotnet
+RUN chmod -R 777 /app/.dotnet /app/.nuget /app
 
-# Сначала копируем и компилируем серверную часть
+# Восстанавливаем и строим серверную часть
 RUN dotnet restore /app/Server/Server.csproj
 RUN dotnet build /app/Server/Server.csproj
 
-# Теперь копируем и компилируем клиентскую часть
+# Восстанавливаем и строим клиентскую часть
 RUN dotnet restore /app/Client/Client.csproj
 RUN dotnet build /app/Client/Client.csproj
 
-# Копируем скрипт для запуска обоих процессов
+# Восстанавливаем и строим проект тестов
+RUN dotnet restore /app/Tests/Tests.csproj
+RUN dotnet build /app/Tests/Tests.csproj
+
+# Запускаем тесты
+RUN dotnet test /app/Tests/Tests.csproj
+
+# Копируем скрипт для запуска
 COPY start.sh /app/start.sh
 
 # Делаем скрипт исполнимым
