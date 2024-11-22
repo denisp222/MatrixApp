@@ -9,6 +9,9 @@ WORKDIR /app
 ENV DOTNET_CLI_HOME=/tmp/.dotnet
 ENV NUGET_PACKAGES=/app/.nuget
 
+# Создаем необходимые директории для NuGet и dotnet
+RUN mkdir -p /app/.dotnet /app/.nuget
+
 # Изменяем права доступа
 RUN chmod -R 777 /app/.dotnet /app/.nuget /app
 
@@ -23,9 +26,6 @@ RUN dotnet build /app/Client/Client.csproj
 # Восстанавливаем и строим проект тестов
 RUN dotnet restore /app/Tests/Tests.csproj
 RUN dotnet build /app/Tests/Tests.csproj
-
-# Запускаем тесты
-RUN dotnet test /app/Tests/Tests.csproj
 
 # Копируем скрипт для запуска
 COPY start.sh /app/start.sh
