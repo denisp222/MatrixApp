@@ -1,5 +1,6 @@
 # Используем официальный образ Rocky Linux
 FROM rockylinux:8
+
 # Используем официальный образ .NET SDK
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
@@ -10,12 +11,12 @@ WORKDIR /app
 USER root
 
 # Устанавливаем переменные окружения для .NET и NuGet
-ENV DOTNET_CLI_HOME=/tmp/.dotnet
+ENV DOTNET_CLI_HOME=/app/.dotnet
 ENV NUGET_PACKAGES=/app/.nuget
 
 # Изменяем права доступа
-RUN chmod -R 777 /app
-RUN chmod -R 777 /tmp/.dotnet
+RUN chmod -R 755 /app
+RUN chmod -R 755 /tmp/.dotnet
 
 # Сначала копируем и компилируем серверную часть
 RUN dotnet restore /app/Server/Server.csproj
