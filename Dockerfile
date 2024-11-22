@@ -9,11 +9,13 @@ WORKDIR /app
 ENV DOTNET_CLI_HOME=/tmp/.dotnet
 ENV NUGET_PACKAGES=/app/.nuget
 
+USER root
+
 # Создаем необходимые директории для NuGet и dotnet
 RUN mkdir -p /app/.dotnet /app/.nuget
 
 # Изменяем права доступа
-RUN chmod -R 777 /app/.dotnet /app/.nuget /app
+RUN chmod -R 777 /app /app/.nuget /app/.dotnet /tmp/.dotnet
 
 # Восстанавливаем и строим серверную часть
 RUN dotnet restore /app/Server/Server.csproj

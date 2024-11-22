@@ -1,12 +1,16 @@
 /home/MatrixApp/Tests/obj/Debug/net6.0/Tests.csproj.AssemblyReference.cache
 /home/MatrixApp/Tests/obj/Debug/net6.0/Tests.GeneratedMSBuildEditorConfig.editorconfig
+/home/MatrixApp/Tests/obj/Debug/net6.0/Tests.AssemblyInfoInputs.cache
+/home/MatrixApp/Tests/obj/Debug/net6.0/Tests.AssemblyInfo.cs
 /home/MatrixApp/Tests/obj/Debug/net6.0/Tests.csproj.CoreCompileInputs.cache
+/home/MatrixApp/Tests/bin/Debug/net6.0/CoverletSourceRootsMapping
 /home/MatrixApp/Tests/bin/Debug/net6.0/Server.deps.json
 /home/MatrixApp/Tests/bin/Debug/net6.0/Server.runtimeconfig.json
 /home/MatrixApp/Tests/bin/Debug/net6.0/Server
 /home/MatrixApp/Tests/bin/Debug/net6.0/Client.deps.json
 /home/MatrixApp/Tests/bin/Debug/net6.0/Client.runtimeconfig.json
 /home/MatrixApp/Tests/bin/Debug/net6.0/Client
+/home/MatrixApp/Tests/bin/Debug/net6.0/Microsoft.TestPlatform.PlatformAbstractions.dll
 /home/MatrixApp/Tests/bin/Debug/net6.0/NUnit3.TestAdapter.dll
 /home/MatrixApp/Tests/bin/Debug/net6.0/NUnit3.TestAdapter.pdb
 /home/MatrixApp/Tests/bin/Debug/net6.0/nunit.engine.dll
@@ -20,7 +24,6 @@
 /home/MatrixApp/Tests/bin/Debug/net6.0/Tests.pdb
 /home/MatrixApp/Tests/bin/Debug/net6.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
 /home/MatrixApp/Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CoreUtilities.dll
-/home/MatrixApp/Tests/bin/Debug/net6.0/Microsoft.TestPlatform.PlatformAbstractions.dll
 /home/MatrixApp/Tests/bin/Debug/net6.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
 /home/MatrixApp/Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CommunicationUtilities.dll
 /home/MatrixApp/Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CrossPlatEngine.dll
