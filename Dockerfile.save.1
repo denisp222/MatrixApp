@@ -1,0 +1,34 @@
+# Используем официальный образ Rocky Linux
+FROM rockylinux:8
+# Используем официальный образ .NET SDK
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+# Устанавливаем необходимые зависимости
+#RUN dnf -y install\
+#    wget \
+#    tar \
+#    && dnf clean all
+
+# Добавляем репозиторий Microsoft для .NET
+#RUN wget https://packages.microsoft.com/config/rhel/8/prod.repo -O /etc/yum.repos.d/microsoft-prod.repo
+
+# Копируем все файлы проекта в контейнер
+COPY . /app
+WORKDIR /app
+
+# AСначала копируем и компилируем серверную часть
+RUN dotnet restore /app/Server/Server.csproj
+RUN dotnet build /app/Server/Server.csproj
+
+# Теперь копируем и компилируем клиентскую часть
+RUN dotnet restore /app/Client/Client.csproj
+RUN dotnet build /app/Client/Client.csproj
+
+
+ARG APP_TYPE=server
+
+# В зависимости от переменной окружения запускаем сервер или клиент
+CMD if [ "$APP_TYPE" = "server" ]; then \
+        dotnet /app/ServerApp/bin/Debug/net7.0/ServerApp.dll; \
+    else \
+        dotnet /app/ClientApp/bin/Debug/net7.0/ClientApp.dll; \
+    fi
