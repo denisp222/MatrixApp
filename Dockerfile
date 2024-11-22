@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 COPY . /app
 WORKDIR /app
 
-USER ROOT
+USER root
 
 # Устанавливаем переменные окружения для .NET и NuGet
 ENV DOTNET_CLI_HOME=/tmp/.dotnet
