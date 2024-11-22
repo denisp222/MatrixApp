@@ -7,12 +7,15 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 COPY . /app
 WORKDIR /app
 
+USER ROOT
+
 # Устанавливаем переменные окружения для .NET и NuGet
 ENV DOTNET_CLI_HOME=/tmp/.dotnet
 ENV NUGET_PACKAGES=/app/.nuget
 
 # Изменяем права доступа
 RUN chmod -R 777 /app
+RUN chmod -R 777 /tmp/.dotnet
 
 # Сначала копируем и компилируем серверную часть
 RUN dotnet restore /app/Server/Server.csproj
