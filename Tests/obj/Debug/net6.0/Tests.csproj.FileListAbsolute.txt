@@ -1,0 +1,5 @@
+/home/MatrixApp/Tests/obj/Debug/net6.0/Tests.csproj.AssemblyReference.cache
+/home/MatrixApp/Tests/obj/Debug/net6.0/Tests.GeneratedMSBuildEditorConfig.editorconfig
+/home/MatrixApp/Tests/obj/Debug/net6.0/Tests.AssemblyInfoInputs.cache
+/home/MatrixApp/Tests/obj/Debug/net6.0/Tests.AssemblyInfo.cs
+/home/MatrixApp/Tests/obj/Debug/net6.0/Tests.csproj.CoreCompileInputs.cache

@@ -1,17 +1,19 @@
 using NUnit.Framework;
 
 [TestFixture]
-public class Tests
+public Class Tests
 {
     [Test]
-    public void TestCalculateAverage()
+    public void CalculateAverage_ValidMatrix_ReturnsCorrectAverage()
     {
-        var matrix = new int[,] {
+        int[,] matrix = {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
         };
-        var result = CalculateAverage(matrix);
+
+        double result = Server.CalculateAverage(matrix);
+
         Assert.AreEqual(5, result);
     }
 }
