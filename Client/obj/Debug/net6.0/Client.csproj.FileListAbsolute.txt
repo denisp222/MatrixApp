@@ -1,0 +1,15 @@
+/home/MatrixApp/Client/bin/Debug/net6.0/Client
+/home/MatrixApp/Client/bin/Debug/net6.0/Client.deps.json
+/home/MatrixApp/Client/bin/Debug/net6.0/Client.runtimeconfig.json
+/home/MatrixApp/Client/bin/Debug/net6.0/Client.dll
+/home/MatrixApp/Client/bin/Debug/net6.0/ref/Client.dll
+/home/MatrixApp/Client/bin/Debug/net6.0/Client.pdb
+/home/MatrixApp/Client/obj/Debug/net6.0/Client.csproj.AssemblyReference.cache
+/home/MatrixApp/Client/obj/Debug/net6.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+/home/MatrixApp/Client/obj/Debug/net6.0/Client.AssemblyInfoInputs.cache
+/home/MatrixApp/Client/obj/Debug/net6.0/Client.AssemblyInfo.cs
+/home/MatrixApp/Client/obj/Debug/net6.0/Client.csproj.CoreCompileInputs.cache
+/home/MatrixApp/Client/obj/Debug/net6.0/Client.dll
+/home/MatrixApp/Client/obj/Debug/net6.0/ref/Client.dll
+/home/MatrixApp/Client/obj/Debug/net6.0/Client.pdb
+/home/MatrixApp/Client/obj/Debug/net6.0/Client.genruntimeconfig.cache

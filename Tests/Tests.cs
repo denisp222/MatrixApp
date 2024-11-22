@@ -1,7 +1,7 @@
 using NUnit.Framework;
 
 [TestFixture]
-public Class Tests
+public class Tests
 {
     [Test]
     public void CalculateAverage_ValidMatrix_ReturnsCorrectAverage()
