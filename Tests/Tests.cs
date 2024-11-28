@@ -51,4 +51,13 @@ public class Tests
 
         Assert.AreEqual(0, result);
     }
+    [Test]
+    public void CalculateAverage_EmptyMatrix_ReturnsZero()
+    {
+    	int[,] matrix = { };
+
+   	double result = Server.CalculateAverage(matrix);
+
+        Assert.AreEqual(0, result);
+    }
 }

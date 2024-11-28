@@ -58,6 +58,12 @@ public class Server
     // Вычисление среднего арифметического
     public static double CalculateAverage(int[,] matrix)
     {
+        // Проверяем, является ли матрица пустой
+        if (matrix == null || matrix.GetLength(0) == 0 || matrix.GetLength(1) == 0)
+        {
+            Console.WriteLine("Received an empty matrix.");
+            return 0; // Возвращаем 0 для пустой матрицы
+        }
         double sum = 0;
         int count = 0;
 
