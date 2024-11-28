@@ -20,6 +20,7 @@
       "outputPath": "/home/MatrixApp/Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+        "/home/MatrixApp/NuGet.Config",
         "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
